@@ -1,19 +1,24 @@
 require 'socket'
-require_relative "quadro"
+require_relative "Classes/quadro"
+require_relative "Classes/pdu"
+require_relative "lerArquivo"
 
+random = Random.new
 SIZE = 1024 * 1024 * 10
-ip_destino = '192.168.0.17'
+arquivo = Arquivo.new
+pdu = arquivo.lerArquivo("PDU/pdu.txt")
+configuracoesIp = arquivo.separarCabecalho(pdu)
+ip_origem = configuracoesIp[0]
+ip_destino = configuracoesIp[1]
+porta = configuracoesIp[2]
+mensagem = arquivo.getMensagem(pdu).join(";")
+pdu = PDU.new(ip_origem, ip_destino, mensagem)
+quadro = Quadro.new(pdu)
 
-socket = TCPSocket.open(ip_destino, 12345)
-File.open('Mensagem/mensagem.txt', 'rb') do |file|
+TCPSocket.open(ip_destino, porta) do |socket| 
   puts "Enviando o arquivo ... "
-  mensagem = file.read(SIZE)
-  quadro = Quadro.new(ip_destino, mensagem)
-
-  random = Random.new
-  # socket.write(quadro.toString())
   loop{
-    number = random.rand(3) 
+    number = random.rand(3)
     if number == 0
       print("DEU RUIM - Tentando novamente em 5 segundos\n")
       sleep 5
