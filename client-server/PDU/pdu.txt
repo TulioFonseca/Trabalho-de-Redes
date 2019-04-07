@@ -1,1 +1,7 @@
+192.168.0.15
+192.168.0.17
+12345
+
 mensagem de oi
+teste
+teste2

@@ -17,11 +17,23 @@ class Arquivo
 	return states
  end
  
+ def separarCabecalho(arquivo)
+	return arquivo[0..2]
+ end
+ 
  def escreverArquivo(caminho, dados)
 	File.open(caminho, 'w') do |f2|
 		f2.puts dados
 		f2.close
 	end	
  end
+ 
+  def converterBinario(mensagem)
+	return mensagem.unpack("B*")
+  end
+  
+  def desconverterMensagemBinario(mensagem)
+	return mensagem.pack("B*")
+  end
         
 end	

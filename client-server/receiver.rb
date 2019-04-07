@@ -6,11 +6,14 @@ require_relative "lerArquivo"
 SIZE = 1024 * 1024 * 10
 
 arquivo = Arquivo.new
-configuracoesIp = arquivo.lerArquivo("Configuracoes/ip.txt")
-arquivo.escreverArquivo('ArquivosParaCamadaSuperior/dados.txt',"Teste 2")
+
 
 pdu = arquivo.lerArquivo("PDU/pdu.txt")
-puts pdu
+configuracoesIp = arquivo.separarCabecalho(pdu)
+
+pduCripto = arquivo.converterBinario(pdu.to_s)
+#teste2 = arquivo.desconverterMensagemBinario(pduCripto) #Desconverter a pduCripto
+
 
 server =  TCPServer.open(configuracoesIp[1].to_s, configuracoesIp[2].to_i)
 puts "Servidor escutando..."	
@@ -29,5 +32,7 @@ loop{
 	puts "Arquivo " + arq.to_s + " Recebido"
 	puts "Fechando conexão"
 	client.close
+	arquivo.escreverArquivo('ArquivosParaCamadaSuperior/dados.txt',"Resposta")
 	arq = arq + 1
 }
+
