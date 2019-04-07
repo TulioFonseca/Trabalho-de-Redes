@@ -4,20 +4,24 @@ require_relative "quadro"
 SIZE = 1024 * 1024 * 10
 ip_destino = '192.168.0.17'
 
-# socket = TCPSocket.open('192.168.0.17', 12345)
-# puts socket
-# File.open('teste.txt', 'rb') do |file|
-# puts "Mandando o arquivo ... "
-#     while chunk = file.read(SIZE)
-#     socket.write(chunk)
-#   end
-# end
-# puts "Arquivo mandado"
-  
-# puts "Fechando conexão"
+socket = TCPSocket.open(ip_destino, 12345)
+File.open('Mensagem/mensagem.txt', 'rb') do |file|
+  puts "Enviando o arquivo ... "
+  mensagem = file.read(SIZE)
+  quadro = Quadro.new(ip_destino, mensagem)
 
-pdu = Quadro.new(ip_destino, 'Bucetao')
-print(pdu.ip_destino + "\n")
-print(pdu.mensagem + "\n")
-print(pdu.mac_destino + "\n")
-
+  random = Random.new
+  socket.write(quadro.toString())
+  loop{
+    number = random.rand(3) 
+    if number == 0
+      print("DEU RUIM")
+      sleep 5
+      socket.write(quadro.toString())
+    else
+      break
+    end
+  }
+end
+puts "Arquivo enviado"  
+puts "Fechando conexão"

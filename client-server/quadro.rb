@@ -23,5 +23,9 @@ class Quadro
         macAddress = stdout[0].slice(114..130)
         return macAddress
      end
+
+     def toString()
+        return ip_destino+","+mensagem+","+mac_destino
+     end
               
 end	
