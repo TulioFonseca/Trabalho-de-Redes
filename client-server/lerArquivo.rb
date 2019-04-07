@@ -34,6 +34,10 @@ class Arquivo
 
 	def desconverterMensagemBinario(mensagem)
 	return mensagem.pack("B*")
-end
+	end
+	
+	def getMensagem(arquivo)
+		return arquivo[4..-1]
+	 end
         
 end	
