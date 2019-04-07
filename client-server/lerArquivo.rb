@@ -28,12 +28,12 @@ class Arquivo
 	end	
  end
  
-  def converterBinario(mensagem)
+	def converterBinario(mensagem)
 	return mensagem.unpack("B*")
-  end
-  
-  def desconverterMensagemBinario(mensagem)
+	end
+
+	def desconverterMensagemBinario(mensagem)
 	return mensagem.pack("B*")
-  end
+end
         
 end	
