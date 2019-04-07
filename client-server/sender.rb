@@ -11,14 +11,15 @@ File.open('Mensagem/mensagem.txt', 'rb') do |file|
   quadro = Quadro.new(ip_destino, mensagem)
 
   random = Random.new
-  socket.write(quadro.toString())
+  # socket.write(quadro.toString())
   loop{
     number = random.rand(3) 
     if number == 0
-      print("DEU RUIM")
+      print("DEU RUIM - Tentando novamente em 5 segundos\n")
       sleep 5
       socket.write(quadro.toString())
     else
+      socket.write(quadro.toString())
       break
     end
   }
