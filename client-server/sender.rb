@@ -1,5 +1,5 @@
 require 'socket'
-require_relative "pdu"
+require_relative "quadro"
 
 SIZE = 1024 * 1024 * 10
 ip_destino = '192.168.0.17'
@@ -16,7 +16,7 @@ ip_destino = '192.168.0.17'
   
 # puts "Fechando conexão"
 
-pdu = PDU.new(ip_destino, 'Bucetao')
+pdu = Quadro.new(ip_destino, 'Bucetao')
 print(pdu.ip_destino + "\n")
 print(pdu.mensagem + "\n")
 print(pdu.mac_destino + "\n")

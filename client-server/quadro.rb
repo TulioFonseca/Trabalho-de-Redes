@@ -1,8 +1,6 @@
 require 'open3'
 
-
-
-class PDU
+class Quadro
 
     def initialize(ip_destino, mensagem)
         @ip_destino = ip_destino
