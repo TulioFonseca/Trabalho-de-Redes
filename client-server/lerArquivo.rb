@@ -17,8 +17,8 @@ class Arquivo
 	return states
  end
  
- def escreverArquivo(dados)
-	File.open('ArquivosParaCamadaSuperior/dados.txt', 'w') do |f2|
+ def escreverArquivo(caminho, dados)
+	File.open(caminho, 'w') do |f2|
 		f2.puts dados
 		f2.close
 	end	
