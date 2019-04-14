@@ -39,5 +39,9 @@ class Arquivo
 	def getMensagem(arquivo)
 		return arquivo[4..-1]
 	 end
+
+	 def separarCabecalhoCliente(arquivo)
+		return arquivo[0..2]
+	 end
         
 end	
