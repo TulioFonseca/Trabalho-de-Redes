@@ -1,49 +1,38 @@
 require 'socket'
 require 'benchmark'
 
-require_relative "lerArquivo"
-require_relative "mac"
-
+require_relative "../Utils/lerArquivo"
+require_relative "../Utils/mac"
+require_relative "Configuracoes"
 
 SIZE = 1024 * 1024 * 10
 
 arquivo = Arquivo.new
 
-pdu = arquivo.lerArquivo("Servidor/ArquivosDaCamadaSuperior/pduSuperior.txt")
-configuracoesIp = arquivo.separarCabecalho(pdu)
-
-pduCripto = arquivo.converterBinario(pdu.to_s)
-#teste2 = arquivo.desconverterMensagemBinario(pduCripto) #Desconverter a pduCripto
+pdu = arquivo.lerArquivo("Configuracoes/configuracoes.txt")
+arquivoDeConfiguracao = arquivo.separarCabecalho(pdu)
+configuracoesIp = Configuracoes.new(arquivoDeConfiguracao[0].to_s,arquivoDeConfiguracao[1].to_i)
 
 mac = MacAdress.new
 myMac = mac.getCabecalhoMac
 
-server =  TCPServer.open(configuracoesIp[1].to_s, configuracoesIp[2].to_i)
+server =  TCPServer.open(configuracoesIp.ip_servidor.to_s, configuracoesIp.porta.to_s)
 puts "Servidor escutando..."	
 arq = 1
 
 loop{ 
 	client = server.accept    
 	puts "Recebendo arquivo ... " + arq.to_s
-	time = Benchmark.realtime do
-	  File.open('Mensagem/mensagem.txt', 'w') do |file|
-		while chunk = client.read(SIZE)
-			puts "Arquivo " + chunk.to_s
-			file.write(chunk)
-		end
-	  end
-	end
-
-	mensagem = arquivo.lerArquivo("Mensagem/mensagem.txt")
+	mensagem = client.read(SIZE);
 	macPdu = mac.getMacPdu(mensagem.to_s)
 	verificacaoMac = mac.verificacaoMac(macPdu, myMac)
 	if (verificacaoMac)
-		arquivo.escreverArquivo('Servidor/ArquivosParaCamadaSuperior/pduCamadaSuperior.txt',pdu)
+		arquivo.escreverArquivo('ArquivosParaCamadaSuperior/pduCamadaSuperior.txt',mensagem)
 		puts "Arquivo " + arq.to_s + " Recebido"
-		puts "Conteudo do arquivo " + arquivo.to_s
 		puts "Fechando conexão"
 		arq = arq + 1
 	else
+		puts "Fechando conexão"
 		puts "PDU Ethernet não é para esse MAC"
 	end
 	client.close
