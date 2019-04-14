@@ -1,11 +1,14 @@
 require 'open3'
+require_relative "../Utils/mac"
 
 class Quadro
 
-    def initialize(pdu)
-        @pdu = pdu
-        @mac_origem = "mac_origem"
-        @mac_destino = getMacAddress(pdu.ip_destino)
+    def initialize(pdu_superior)
+        @pdu_superior = pdu_superior
+        mac = MacAdress.new
+        myMac = mac.getCabecalhoMac
+        @mac_origem = myMac
+        @mac_destino = getMacAddress(pdu_superior.ip_destino)
     end
 
     attr_writer :mac_origem
@@ -14,8 +17,8 @@ class Quadro
     attr_writer :mac_destino
     attr_reader :mac_destino
 
-    attr_writer :pdu
-    attr_reader :pdu
+    attr_writer :pdu_superior
+    attr_reader :pdu_superior
 
     def getMacAddress(ip)
         command = "arp " + ip
@@ -25,12 +28,7 @@ class Quadro
      end
 
      def toString()
-        return mac_origem+","+mac_destino+","+pdu.toString()
+        return mac_origem+","+mac_destino+","+pdu_superior.toString()
      end
               
-end
-
-def stringToQuadro(string)
-    
-
 end
