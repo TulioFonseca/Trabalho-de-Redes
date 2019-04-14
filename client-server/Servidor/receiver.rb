@@ -32,6 +32,7 @@ loop{
 		puts "Fechando conexão"
 		arq = arq + 1
 	else
+		puts "Arquivo " + arq.to_s + " Falhou"
 		puts "Fechando conexão"
 		puts "PDU Ethernet não é para esse MAC"
 	end
