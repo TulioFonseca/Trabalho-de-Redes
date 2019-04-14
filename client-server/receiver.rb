@@ -9,7 +9,7 @@ SIZE = 1024 * 1024 * 10
 
 arquivo = Arquivo.new
 
-pdu = arquivo.lerArquivo("PDU/pdu.txt")
+pdu = arquivo.lerArquivo("Servidor/ArquivosDaCamadaSuperior/pduSuperior.txt")
 configuracoesIp = arquivo.separarCabecalho(pdu)
 
 pduCripto = arquivo.converterBinario(pdu.to_s)
@@ -28,7 +28,8 @@ loop{
 	time = Benchmark.realtime do
 	  File.open('Mensagem/mensagem.txt', 'w') do |file|
 		while chunk = client.read(SIZE)
-		  file.write(chunk)
+			puts "Arquivo " + chunk.to_s
+			file.write(chunk)
 		end
 	  end
 	end
@@ -37,12 +38,13 @@ loop{
 	macPdu = mac.getMacPdu(mensagem.to_s)
 	verificacaoMac = mac.verificacaoMac(macPdu, myMac)
 	if (verificacaoMac)
-		arquivo.escreverArquivo('ArquivosParaCamadaSuperior/pduCamadaSuperior.txt',pdu)
+		arquivo.escreverArquivo('Servidor/ArquivosParaCamadaSuperior/pduCamadaSuperior.txt',pdu)
 		puts "Arquivo " + arq.to_s + " Recebido"
+		puts "Conteudo do arquivo " + arquivo.to_s
 		puts "Fechando conexão"
 		arq = arq + 1
 	else
-		puts "Quadro Ethernet não é para esse MAC"
+		puts "PDU Ethernet não é para esse MAC"
 	end
 	client.close
 	
