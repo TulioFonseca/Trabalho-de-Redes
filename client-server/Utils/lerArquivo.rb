@@ -29,7 +29,7 @@ class Arquivo
  end
  
 	def converterBinario(mensagem)
-	return mensagem.unpack("B*")
+	return mensagem.unpack("B*")[0]
 	end
 
 	def desconverterMensagemBinario(mensagem)
