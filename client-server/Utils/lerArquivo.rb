@@ -18,7 +18,7 @@ class Arquivo
  end
  
  def separarCabecalho(arquivo)
-	return arquivo[0..2]
+	return arquivo[0..1]
  end
  
  def escreverArquivo(caminho, dados)
