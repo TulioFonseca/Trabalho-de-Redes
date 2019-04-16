@@ -6,7 +6,7 @@ class Quadro
     def initialize(pdu_superior)
         @pdu_superior = pdu_superior
         mac = MacAdress.new
-        myMac = mac.getCabecalhoMac
+        myMac = mac.getMacAddres
         @mac_origem = myMac
         @mac_destino = getMacAddress(pdu_superior.ip_destino)
     end
