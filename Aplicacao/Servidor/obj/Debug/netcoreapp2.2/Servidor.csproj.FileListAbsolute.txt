@@ -1,0 +1,11 @@
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\bin\Debug\netcoreapp2.2\Servidor.deps.json
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\bin\Debug\netcoreapp2.2\Servidor.runtimeconfig.json
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\bin\Debug\netcoreapp2.2\Servidor.runtimeconfig.dev.json
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\bin\Debug\netcoreapp2.2\Servidor.dll
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\bin\Debug\netcoreapp2.2\Servidor.pdb
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\obj\Debug\netcoreapp2.2\Servidor.csprojAssemblyReference.cache
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\obj\Debug\netcoreapp2.2\Servidor.csproj.CoreCompileInputs.cache
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\obj\Debug\netcoreapp2.2\Servidor.AssemblyInfoInputs.cache
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\obj\Debug\netcoreapp2.2\Servidor.AssemblyInfo.cs
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\obj\Debug\netcoreapp2.2\Servidor.dll
+C:\Users\TulioFonseca\Desktop\Trabalho-de-Redes\Aplicacao\Servidor\obj\Debug\netcoreapp2.2\Servidor.pdb
