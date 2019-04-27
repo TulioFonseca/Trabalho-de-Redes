@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Redes\\SERVIDOR\\Aplicacao\\Servidor\\Servidor.csproj",
-      "projectName": "Servidor",
-      "projectPath": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Redes\\SERVIDOR\\Aplicacao\\Servidor\\Servidor.csproj",
+      "projectUniqueName": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Redes\\SERVIDOR\\Aplicacao\\aplicacao.csproj",
+      "projectName": "aplicacao",
+      "projectPath": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Redes\\SERVIDOR\\Aplicacao\\aplicacao.csproj",
       "packagesPath": "C:\\Users\\TulioFonseca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Redes\\SERVIDOR\\Aplicacao\\Servidor\\obj\\",
+      "outputPath": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Redes\\SERVIDOR\\Aplicacao\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

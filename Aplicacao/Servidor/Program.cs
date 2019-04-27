@@ -1,41 +1,66 @@
 ﻿using System;
-using System.Net.Sockets;  
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 
 namespace Servidor
 {
     class Program
     {
-    private const int portNum = 666;  
-    
-        public static int Main(String[] args) {  
-            bool done = false;  
-    
-            TcpListener listener = new TcpListener(portNum);  
-    
-            listener.Start();  
-    
-            while (!done) {  
-                Console.Write("Servidor Aplicação Rodando e esperando um bucetao ... ");  
-                TcpClient client = listener.AcceptTcpClient();  
-    
-                Console.WriteLine("Connection accepted.");  
-                NetworkStream ns = client.GetStream();  
-    
-                byte[] byteTime = Encoding.ASCII.GetBytes(DateTime.Now.ToString());  
-    
-                try {  
-                    ns.Write(byteTime, 0, byteTime.Length);  
-                    ns.Close();  
-                    client.Close();  
-                } catch (Exception e) {  
-                    Console.WriteLine(e.ToString());  
-                }  
-            }  
-    
-            listener.Stop();  
-    
-            return 0;  
-        }  
+        public static void Main(){ 
+            TcpListener server=null;   
+            try {
+                Int32 port = 666;
+                IPAddress localAddr = IPAddress.Parse("192.168.0.17");
+                server = new TcpListener(localAddr, port);
+                server.Start();
+                Byte[] bytes = new Byte[256];
+                String data = null;
+                Console.WriteLine("Servidor em estado de espera ...");
+                while(true) {
+                    TcpClient client = server.AcceptTcpClient();            
+                    Console.WriteLine("Connected!");
+                    data = null;
+                    NetworkStream stream = client.GetStream();
+                    int i;
+                    while((i = stream.Read(bytes, 0, bytes.Length))!=0){   
+                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                        data = data.ToUpper();
+                        Console.WriteLine("Arquivo: ", data);
+
+                        //String[] array = data.Split(",");
+                        //String ipOrigem = array[2];
+                        //Console.WriteLine("ipOrigem", ipOrigem);
+                        //String ipDestino = array[3];
+                        //String corpoMensagem = array[4];
+
+                        //if (corpoMensagem.Contains("/GETNOMEDOGRUPO")){
+                        //    Console.WriteLine("Metodo /GET encontrado ... Mandando resposta ");
+                        // }
+
+
+                        byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
+
+                        // Send back a response.
+                        stream.Write(msg, 0, msg.Length);
+                        Console.WriteLine("Sent: {0}", data);   
+                        
+
+                    }
+                    client.Close();
+                }
+            }
+            catch(SocketException e){
+                Console.WriteLine("SocketException: ", e);
+            }
+            finally{
+                server.Stop();
+            }
+            Console.WriteLine("\nHit enter to continue...");
+            Console.Read();
+        }     
+
+        
     }
 }
