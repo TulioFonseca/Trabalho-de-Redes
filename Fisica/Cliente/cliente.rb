@@ -11,10 +11,16 @@ class Cliente
 
     def enviar_mensagem_servidor(ip_destino, porta, quadro)
         puts "Conectando com o servidor ... "
-        TCPSocket.open(ip_destino, porta) do |socket| 
+        /TCPSocket.open(ip_destino, porta) do |socket| 
             puts "Enviando o arquivo ... "
             socket.write(quadro.toString())
-        end
+        end/
+        server = TCPSocket.open(ip_destino, porta)
+        puts "Enviando o arquivo ... "
+        server.puts(quadro.toString())
+        resp = server.recvfrom( 1024 * 1024 * 10 )
+        puts resp
+        server.close
     end
 
     def run(ip_origem, ip_destino, porta, mensagem)       

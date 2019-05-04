@@ -29,21 +29,21 @@ namespace Servidor
                         data = data.ToUpper();
                         Console.WriteLine("Arquivo: ", data);
 
-                        //String[] array = data.Split(",");
-                        //String ipOrigem = array[2];
-                        //Console.WriteLine("ipOrigem", ipOrigem);
-                        //String ipDestino = array[3];
-                        //String corpoMensagem = array[4];
+                        /*String[] array = data.Split(",");
+                        String ipOrigem = array[2];
+                        Console.WriteLine("ipOrigem", ipOrigem);
+                        String ipDestino = array[3];
+                        String corpoMensagem = array[4];
 
-                        //if (corpoMensagem.Contains("/GETNOMEDOGRUPO")){
-                        //    Console.WriteLine("Metodo /GET encontrado ... Mandando resposta ");
-                        // }
-
+                        if (corpoMensagem.Contains("/GET")){
+                            Console.WriteLine("Metodo /GET encontrado ... Mandando resposta ");
+                        }
+                        */
 
                         byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
 
                         // Send back a response.
-                        stream.Write(msg, 0, msg.Length);
+                        //stream.Write(msg, 0, msg.Length);
                         Console.WriteLine("Sent: {0}", data);   
                         
 

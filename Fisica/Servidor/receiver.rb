@@ -36,6 +36,7 @@ loop{
 		puts "Arquivo " + arq.to_s + " Recebido"
 		puts "Fechando conexão"
 		arq = arq + 1
+		client.puts("Arquivo Recebido")
 	else
 		puts "Arquivo " + arq.to_s + " Falhou"
 		puts "Fechando conexão"
