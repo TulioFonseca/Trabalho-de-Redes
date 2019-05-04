@@ -11,15 +11,17 @@ class Cliente
 
     def enviar_mensagem_servidor(ip_destino, porta, quadro)
         puts "Conectando com o servidor ... "
-        /TCPSocket.open(ip_destino, porta) do |socket| 
-            puts "Enviando o arquivo ... "
-            socket.write(quadro.toString())
-        end/
+        # TCPSocket.open(ip_destino, porta) do |socket| 
+        #     puts "Enviando o arquivo ... "
+        #     socket.write(quadro.toString())
+            
+        # end
         server = TCPSocket.open(ip_destino, porta)
         puts "Enviando o arquivo ... "
         server.puts(quadro.toString())
-        resp = server.recvfrom( 1024 * 1024 * 10 )
-        puts resp
+        while line = server.gets     # Read lines from the socket
+            puts line.chop       # And print with platform line terminator
+         end
         server.close
     end
 
