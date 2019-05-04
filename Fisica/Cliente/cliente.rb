@@ -18,7 +18,7 @@ class Cliente
         # end
         server = TCPSocket.open(ip_destino, porta)
         puts "Enviando o arquivo ... "
-        server.puts(quadro.toString())
+        server.write(quadro.toString())
         while line = server.gets     # Read lines from the socket
             puts line.chop       # And print with platform line terminator
          end

@@ -17,14 +17,16 @@ configuracoesIp = Configuracoes.new(arquivoDeConfiguracao[0].to_s,arquivoDeConfi
 mac = MacAdress.new
 myMac = mac.getCabecalhoMac
 
-server =  TCPServer.open(configuracoesIp.ip_servidor.to_s, configuracoesIp.porta.to_s)
+#server =  TCPServer.open(configuracoesIp.ip_servidor.to_s, configuracoesIp.porta.to_s)
+server =  TCPServer.open("localhost", 5557)
+
 puts "Servidor escutando..."	
 arq = 1
 
 loop{ 
 	client = server.accept    
 	puts "Recebendo arquivo ... " + arq.to_s
-	mensagem = client.read(SIZE);
+	mensagem = client.recv(SIZE)
 	#macPdu = mac.getMacPdu(mensagem.to_s)
 	#verificacaoMac = mac.verificacaoMac(macPdu, myMac)
 	verificacaoMac = true

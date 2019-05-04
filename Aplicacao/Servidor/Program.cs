@@ -12,7 +12,8 @@ namespace Servidor
             TcpListener server=null;   
             try {
                 Int32 port = 666;
-                IPAddress localAddr = IPAddress.Parse("192.168.0.17");
+                IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+                //IPAddress localAddr = IPAddress.Parse("192.168.0.17");
                 server = new TcpListener(localAddr, port);
                 server.Start();
                 Byte[] bytes = new Byte[256];
@@ -26,8 +27,7 @@ namespace Servidor
                     int i;
                     while((i = stream.Read(bytes, 0, bytes.Length))!=0){   
                         data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                        data = data.ToUpper();
-                        Console.WriteLine("Arquivo: ", data);
+                        //data = data.ToUpper();
 
                         /*String[] array = data.Split(",");
                         String ipOrigem = array[2];
@@ -40,13 +40,12 @@ namespace Servidor
                         }
                         */
 
-                        byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
+                        byte[] msg = System.Text.Encoding.ASCII.GetBytes("BUCETA ATOMICA");
 
                         // Send back a response.
-                        //stream.Write(msg, 0, msg.Length);
-                        Console.WriteLine("Sent: {0}", data);   
+                        Console.WriteLine("Mensagem: ", data);   
+                        stream.Write(msg, 0, msg.Length);
                         
-
                     }
                     client.Close();
                 }
@@ -60,7 +59,9 @@ namespace Servidor
             Console.WriteLine("\nHit enter to continue...");
             Console.Read();
         }     
-
+        
         
     }
+
+   
 }
