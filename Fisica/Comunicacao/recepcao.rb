@@ -17,12 +17,15 @@ puts "Servidor escutando..."
 
 loop{ 
 	client = server.accept    
-	mensagem = client.read(SIZE);
-	puts "Mensagem: " + mensagem
-	client.close
+	mensagem = client.recv(SIZE)
+	puts "Enviando mensagem: " + mensagem
 	puts "\n"
 	cliente_fisica = Cliente.new()
-	cliente_fisica.run(ip_origem, ip_destino, porta, mensagem)
+	resposta = cliente_fisica.run(ip_origem, ip_destino, porta, mensagem)
+	puts "Respondendo Aplicacao com Resposta: " + resposta
+	client.write(resposta)
+	puts "Fechando \n"
+	client.close
 }
 
 

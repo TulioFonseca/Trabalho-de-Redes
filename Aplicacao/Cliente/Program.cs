@@ -1,40 +1,54 @@
-﻿using System;
-using System.IO;
-using System.Net;
+﻿using System;  
+using System.Net;  
+using System.Net.Sockets;  
 using System.Text;
-using System.Net.Sockets;
 
-namespace Cliente
+namespace Teste
 {
     class Program
     {
+        public static void StartClient() {  
+
+        byte[] bytes = new byte[1024];
+        try {
+            Console.WriteLine("[APLICACAO - FISICA]");  
+            IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+            IPEndPoint remoteEP = new IPEndPoint(ipAddress,1111);  
+  
+            Socket sender = new Socket(ipAddress.AddressFamily,   
+                SocketType.Stream, ProtocolType.Tcp );  
+  
+            try {  
+                sender.Connect(remoteEP);  
+  
+                Console.WriteLine("Conectado");  
+  
+                byte[] msg = Encoding.ASCII.GetBytes("/getNomesDoGrupo");  
+
+                Console.WriteLine("Enviando mensagem");  
+                int bytesSent = sender.Send(msg);  
+  
+                int bytesRec = sender.Receive(bytes);  
+                Console.WriteLine("Resposta Obtida = {0}", Encoding.ASCII.GetString(bytes,0,bytesRec));  
+  
+                sender.Shutdown(SocketShutdown.Both);  
+                sender.Close();  
+  
+            } catch (ArgumentNullException ane) {  
+                Console.WriteLine("ArgumentNullException : {0}",ane.ToString());  
+            } catch (SocketException se) {  
+                Console.WriteLine("SocketException : {0}",se.ToString());  
+            } catch (Exception e) {  
+                Console.WriteLine("Unexpected exception : {0}", e.ToString());  
+            }  
+  
+        } catch (Exception e) {  
+            Console.WriteLine( e.ToString());  
+        }  
+    }
         static void Main(string[] args)
         {
-            Console.WriteLine("[ENVIO: APLICACAO - FISICO]");
-            
-            string ip_servidor = "localhost";
-            int porta_servidor = 1111;
-
-            string messagem = "/getNomesDoGrupo";
-            Byte[] data = System.Text.Encoding.ASCII.GetBytes(messagem); 
-
-            TcpClient client = new TcpClient(); 
-            client.Connect(ip_servidor, porta_servidor);
-
-            Console.WriteLine("Connected");
-
-            Stream stm = client.GetStream();
-
-            ASCIIEncoding asen= new ASCIIEncoding();
-            byte[] ba=asen.GetBytes(messagem);
-            Console.WriteLine("Transmitting.....");
-
-            stm.Write(ba,0,ba.Length);
-
-            // byte[] bb = new byte[100];
-            // int k = stm.Read(bb,0,100);
-
-            client.Close();
+            StartClient();  
         }
     }
 }
