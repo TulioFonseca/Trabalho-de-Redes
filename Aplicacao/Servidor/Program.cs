@@ -9,59 +9,61 @@ namespace Servidor
     class Program
     {
         public static void Main(){ 
-            TcpListener server=null;   
-            try {
-                Int32 port = 666;
-                IPAddress localAddr = IPAddress.Parse("127.0.0.1");
-                //IPAddress localAddr = IPAddress.Parse("192.168.0.17");
-                server = new TcpListener(localAddr, port);
-                server.Start();
-                Byte[] bytes = new Byte[256];
-                String data = null;
-                Console.WriteLine("Servidor em estado de espera ...");
-                while(true) {
-                    TcpClient client = server.AcceptTcpClient();            
-                    Console.WriteLine("Connected!");
-                    data = null;
-                    NetworkStream stream = client.GetStream();
-                    int i;
-                    while((i = stream.Read(bytes, 0, bytes.Length))!=0){   
-                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                        //data = data.ToUpper();
+            Int32 port = 666;
+            IPAddress localAddr = IPAddress.Parse("192.168.0.17");
+            TcpListener serverSocket = new TcpListener(localAddr, port);
+            int requestCount = 0;
+            TcpClient clientSocket = default(TcpClient);
+            serverSocket.Start();
+            Console.WriteLine(" >> Server Started");
+            requestCount = 0;
 
-                        /*String[] array = data.Split(",");
-                        String ipOrigem = array[2];
-                        Console.WriteLine("ipOrigem", ipOrigem);
-                        String ipDestino = array[3];
-                        String corpoMensagem = array[4];
+            while ((true))
+            {
+                try
+                {
 
-                        if (corpoMensagem.Contains("/GET")){
-                            Console.WriteLine("Metodo /GET encontrado ... Mandando resposta ");
-                        }
-                        */
+                    clientSocket = serverSocket.AcceptTcpClient();
+                    Console.WriteLine(" >> Accept connection from client");
+                    requestCount = requestCount + 1;
+                    NetworkStream networkStream = clientSocket.GetStream();
+                    byte[] bytesFrom = new byte[10025];
+                    networkStream.Read(bytesFrom, 0, bytesFrom.Length);
+                    string dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
+                    
+                    String[] array = dataFromClient.Split(",");
+                    String ipOrigem = array[2];
+                    Console.WriteLine("ipOrigem", ipOrigem);
+                    String ipDestino = array[3];
+                    String corpoMensagem = array[4];
 
-                        byte[] msg = System.Text.Encoding.ASCII.GetBytes("BUCETA ATOMICA");
-
-                        // Send back a response.
-                        Console.WriteLine("Mensagem: ", data);   
-                        stream.Write(msg, 0, msg.Length);
-                        
+                    string resposta = "Metodo nao encontrado";
+                    if (corpoMensagem.Contains("/GETNOMESDOGRUPO")){
+                        Console.WriteLine("Metodo /GET encontrado ... Mandando resposta ");
+                        resposta = "Caio, Tulio, Felipao ";
                     }
-                    client.Close();
+
+
+                    Console.WriteLine(" >> Data from client - " + dataFromClient);
+                    string serverResponse = "Response Message: " + resposta;
+                    Byte[] sendBytes = Encoding.ASCII.GetBytes(serverResponse);
+                    networkStream.Write(sendBytes, 0, sendBytes.Length);
+                    networkStream.Flush();
+                    Console.WriteLine(" >> " + serverResponse);
+                    clientSocket.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
                 }
             }
-            catch(SocketException e){
-                Console.WriteLine("SocketException: ", e);
-            }
-            finally{
-                server.Stop();
-            }
-            Console.WriteLine("\nHit enter to continue...");
-            Console.Read();
-        }     
+
+            serverSocket.Stop();
+            Console.WriteLine(" >> exit");
+            Console.ReadLine();
         
+        }     
+
         
     }
-
-   
 }
