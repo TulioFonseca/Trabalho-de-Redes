@@ -9,47 +9,31 @@ namespace Servidor
     class Program
     {
         public static void Main(){ 
-            Int32 port = 666;
-            IPAddress localAddr = IPAddress.Parse("192.168.0.17");
-            TcpListener serverSocket = new TcpListener(localAddr, port);
-            int requestCount = 0;
-            TcpClient clientSocket = default(TcpClient);
+            TcpListener serverSocket= configuracaoInicialServer();
             serverSocket.Start();
-            Console.WriteLine(" >> Server Started");
-            requestCount = 0;
-
+            TcpClient clientSocket = default(TcpClient);
+            Console.WriteLine(" Servidor escutando ...");
             while ((true))
             {
                 try
                 {
-
                     clientSocket = serverSocket.AcceptTcpClient();
-                    Console.WriteLine(" >> Accept connection from client");
-                    requestCount = requestCount + 1;
+                    Console.WriteLine(" Conectado com o Cliente");
                     NetworkStream networkStream = clientSocket.GetStream();
                     byte[] bytesFrom = new byte[10025];
                     networkStream.Read(bytesFrom, 0, bytesFrom.Length);
                     string dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
-                    
-                    String[] array = dataFromClient.Split(",");
-                    String ipOrigem = array[2];
-                    Console.WriteLine("ipOrigem", ipOrigem);
-                    String ipDestino = array[3];
-                    String corpoMensagem = array[4];
-
-                    string resposta = "Metodo nao encontrado";
-                    if (corpoMensagem.Contains("/GETNOMESDOGRUPO")){
-                        Console.WriteLine("Metodo /GET encontrado ... Mandando resposta ");
-                        resposta = "Caio, Tulio, Felipao ";
+                    String corpoMensagem = getCorpoMsg(dataFromClient);
+                    string resposta = "";
+                    if (corpoMensagem.Contains("/get")){
+                        Console.WriteLine("Metodo /GET encontrado ... Mandando resposta... ");
+                        resposta = "Caio, Tulio, Felipao  \n";
                     }
-
-
-                    Console.WriteLine(" >> Data from client - " + dataFromClient);
-                    string serverResponse = "Response Message: " + resposta;
+                    string serverResponse = resposta;
                     Byte[] sendBytes = Encoding.ASCII.GetBytes(serverResponse);
                     networkStream.Write(sendBytes, 0, sendBytes.Length);
                     networkStream.Flush();
-                    Console.WriteLine(" >> " + serverResponse);
+                    Console.WriteLine(" -> " + serverResponse);
                     clientSocket.Close();
                 }
                 catch (Exception ex)
@@ -57,13 +41,19 @@ namespace Servidor
                     Console.WriteLine(ex.ToString());
                 }
             }
+        }   
+        private static TcpListener configuracaoInicialServer(){
+            Int32 port = 666;
+            IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+            return new TcpListener(localAddr, port);
+        }  
 
-            serverSocket.Stop();
-            Console.WriteLine(" >> exit");
-            Console.ReadLine();
-        
-        }     
-
-        
+        private static String getCorpoMsg(String dataFromClient){
+            String[] array = dataFromClient.Split(",");
+            String ipOrigem = array[2];
+            String ipDestino = array[3];
+            String corpoMensagem = array[4];
+            return corpoMensagem;
+        }
     }
 }

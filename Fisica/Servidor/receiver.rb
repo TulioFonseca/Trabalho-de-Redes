@@ -17,9 +17,7 @@ configuracoesIp = Configuracoes.new(arquivoDeConfiguracao[0].to_s,arquivoDeConfi
 mac = MacAdress.new
 myMac = mac.getCabecalhoMac
 
-#server =  TCPServer.open(configuracoesIp.ip_servidor.to_s, configuracoesIp.porta.to_s)
-server =  TCPServer.open("localhost", 5557)
-
+server =  TCPServer.open(configuracoesIp.ip_servidor.to_s, configuracoesIp.porta.to_s)
 puts "Servidor escutando..."	
 arq = 1
 
@@ -32,9 +30,8 @@ loop{
 	verificacaoMac = true
 	if (verificacaoMac)
 		enviarDadosCamadaSuperior = Cliente.new
-		enviarDadosCamadaSuperior.run(mensagem)
-		puts "Mensagem " + mensagem.to_s
-
+		respostaServidor = enviarDadosCamadaSuperior.run(mensagem)
+		puts "Retorno Servidor " + respostaServidor.to_s
 		puts "Arquivo " + arq.to_s + " Recebido"
 		puts "Fechando conexão"
 		arq = arq + 1
@@ -43,7 +40,7 @@ loop{
 		puts "Fechando conexão"
 		puts "PDU Ethernet não é para esse MAC"
 	end
-	client.puts("BUCETAO")
+	client.write(respostaServidor)
 	client.close
 	
 }
