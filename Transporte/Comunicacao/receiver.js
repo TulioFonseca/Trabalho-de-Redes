@@ -2,6 +2,7 @@ var net = require('net');
 
 var HOST = '127.0.0.1';
 var PORT = 6969;
+console.log("[Recepcao: Transporte <- Aplicacao]")
 
 net.createServer(function(sock) {
     
@@ -10,8 +11,11 @@ net.createServer(function(sock) {
     sock.on('data', function(data) {
         
         console.log('DATA ' + sock.remoteAddress + ': ' + data);
-        // Write the data back to the socket, the client will receive it as data from the server
-        sock.write('You said "' + data + '"');
+        // Write the data back to the socket, the client will receive it as data from the server\
+        var cliente = require('../Cliente/clienteUDP');
+        data = cliente.run()
+        console.log(data)
+        sock.write('You said "' + result + '"');
         
     });
     
