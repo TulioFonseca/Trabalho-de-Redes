@@ -11,11 +11,6 @@ class Cliente
 
     def enviar_mensagem_servidor(ip_destino, porta, quadro)
         puts "Conectando com o servidor ... "
-        # TCPSocket.open(ip_destino, porta) do |socket| 
-        #     puts "Enviando o arquivo ... "
-        #     socket.write(quadro.toString())
-            
-        # end
         server = TCPSocket.open(ip_destino, porta)
         puts "Enviando o arquivo ... "
         server.write(quadro.toString())

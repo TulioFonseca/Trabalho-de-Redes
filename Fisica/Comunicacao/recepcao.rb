@@ -8,8 +8,8 @@ puts "[RECEPCAO: APLICACAO - FISICA]"
 ip_servidor = "localhost"
 porta_servidor = "1111"
 
-ip_origem = "192.168.0.15"
-ip_destino = "192.168.0.17"
+ip_origem = "172.16.255.137"
+ip_destino = "172.16.254.99"
 porta = 12345
 
 server =  TCPServer.open(ip_servidor, porta_servidor)
