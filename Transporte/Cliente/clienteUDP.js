@@ -1,16 +1,16 @@
 module.exports = {
-    run: function () {
+    run: async function (mensagem) {
         console.log("[Envio: Transporte -> Fisica]")
         var net = require('net');
         var client = new net.Socket();
         client.connect(1111, '127.0.0.1', function() {
             console.log('Connected');
-            client.write('Hello, server! Love, Client.');            
+            client.write(mensagem);            
         });
-        client.on('data', function(data) {
-            console.log('Received: ' + data);
+        await client.on('data', function(data) {
             result = data
-            client.destroy(); // kill client after server's response
+            console.log("Cliente: " + result)
+            client.destroy();
         });
         return result
     }

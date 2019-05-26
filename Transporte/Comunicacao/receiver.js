@@ -13,10 +13,13 @@ net.createServer(function(sock) {
         console.log('DATA ' + sock.remoteAddress + ': ' + data);
         // Write the data back to the socket, the client will receive it as data from the server\
         var cliente = require('../Cliente/clienteUDP');
-        data = cliente.run()
-        console.log(data)
-        sock.write('You said "' + result + '"');
-        
+
+        cliente.run(data).then((result) => {
+            // console.log("Result " + Object.keys(result))
+            console.log("Result " + result.data)
+            sock.write('You said "' + result + '"');
+
+        });
     });
     
     sock.on('close', function(data) {
