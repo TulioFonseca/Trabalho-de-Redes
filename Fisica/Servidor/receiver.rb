@@ -25,8 +25,9 @@ loop{
 	client = server.accept    
 	puts "Recebendo arquivo ... " + arq.to_s
 	mensagem = client.recv(SIZE)
-	macPdu = mac.getMacPdu(mensagem.to_s)
-	verificacaoMac = mac.verificacaoMac(macPdu, myMac)
+	#macPdu = mac.getMacPdu(mensagem.to_s)
+	#verificacaoMac = mac.verificacaoMac(macPdu, myMac)
+	verificacaoMac = true
 	if (verificacaoMac)
 		enviarDadosCamadaSuperior = Cliente.new
 		respostaServidor = enviarDadosCamadaSuperior.run(mensagem)
