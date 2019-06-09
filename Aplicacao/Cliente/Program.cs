@@ -11,9 +11,9 @@ namespace Teste
 
         byte[] bytes = new byte[1024];
         try {
-            Console.WriteLine("[ENVIO: APLICACAO - FISICA]");  
+            Console.WriteLine("[ENVIO: APLICACAO - TRANSPORTE]");  
             IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-            IPEndPoint remoteEP = new IPEndPoint(ipAddress,1111);  
+            IPEndPoint remoteEP = new IPEndPoint(ipAddress,1122);  
   
             Socket sender = new Socket(ipAddress.AddressFamily,   
                 SocketType.Stream, ProtocolType.Tcp );  
@@ -23,7 +23,7 @@ namespace Teste
   
                 Console.WriteLine("Conectado");  
   
-                byte[] msg = Encoding.ASCII.GetBytes("/getNomesDoGrupo");  
+                byte[] msg = Encoding.ASCII.GetBytes("/getNomesDoGrupo" + "\n");  
 
                 Console.WriteLine("Enviando mensagem");  
                 int bytesSent = sender.Send(msg);  

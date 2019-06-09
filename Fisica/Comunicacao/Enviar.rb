@@ -3,17 +3,19 @@ require 'socket'
 class Cliente
 
   def run (mensagem)
-    server = TCPSocket.open('localhost', 5556)
-    puts "Mandando para localhost 5556"
+    server = TCPSocket.open('localhost', 4433)
     server.write(mensagem)
+    resposta = ""
 
-    resposta = "Caio, Tulio, Felipao"
-    #resposta = server.gets
-    #while line = server.gets     # Read lines from the socket
-    #  resposta += line.chop       # And print with platform line terminator
-    #end
-    puts "Retorno Servidor " + resposta.to_s
+    while line = server.gets     # Read lines from the socket
+      resposta += line.chop       # And print with platform line terminator
+      puts(resposta)
+    end
+
     server.close
     return resposta
   end
 end
+
+c = Cliente.new
+c.run("teste")
