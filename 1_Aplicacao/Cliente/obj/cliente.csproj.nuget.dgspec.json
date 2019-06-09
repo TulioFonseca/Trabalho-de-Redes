@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj": {}
+  },
+  "projects": {
+    "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj",
+        "projectName": "cliente",
+        "projectPath": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj",
+        "packagesPath": "/home/caio/.nuget/packages/",
+        "outputPath": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/caio/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
