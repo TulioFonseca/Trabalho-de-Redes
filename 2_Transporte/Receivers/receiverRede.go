@@ -35,7 +35,6 @@ func main() {
         // send new string back to client
         conn.Write([]byte(response))
     }
-
 }
 
 func sendAplicacao(message string) string{

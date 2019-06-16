@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22754c75-eff6-4a46-a1e9-ab1dcee6a791" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/bin/Debug/netcoreapp2.2/Servidor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/bin/Debug/netcoreapp2.2/Servidor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/bin/Debug/netcoreapp2.2/Servidor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/bin/Debug/netcoreapp2.2/Servidor.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/bin/Debug/netcoreapp2.2/Servidor.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/bin/Debug/netcoreapp2.2/Servidor.runtimeconfig.dev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Debug/netcoreapp2.2/Servidor.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/Servidor.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Servidor/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/bin/Debug/netcoreapp2.2/cliente.dll" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/bin/Debug/netcoreapp2.2/cliente.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/bin/Debug/netcoreapp2.2/cliente.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/bin/Debug/netcoreapp2.2/cliente.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.dll" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/Debug/netcoreapp2.2/cliente.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/cliente.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/cliente.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/cliente.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/cliente.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/cliente.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/cliente.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/1_Aplicacao/Cliente/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2_Transporte/Receivers/receiverAplicacao.go" beforeDir="false" afterPath="$PROJECT_DIR$/2_Transporte/Receivers/receiverAplicacao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2_Transporte/Receivers/receiverRede.go" beforeDir="false" afterPath="$PROJECT_DIR$/2_Transporte/Receivers/receiverRede.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3_Rede/Receivers/receiverFisica.py" beforeDir="false" afterPath="$PROJECT_DIR$/3_Rede/Receivers/receiverFisica.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4_Fisica/Comunicacao/Enviar.rb" beforeDir="false" afterPath="$PROJECT_DIR$/4_Fisica/Comunicacao/Enviar.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4_Fisica/Servidor/receiver.rb" beforeDir="false" afterPath="$PROJECT_DIR$/4_Fisica/Servidor/receiver.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4_Fisica/Comunicacao/recepcao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/4_Fisica/Comunicacao/recepcao.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,19 +77,19 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/1_Aplicacao/Servidor/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+            <state relative-caret-position="126">
+              <caret line="27" column="56" lean-forward="true" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2_Transporte/Receivers/receiverRede.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="612">
               <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
             </state>
           </provider>
@@ -224,6 +221,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -252,12 +250,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560708816598</updated>
-      <workItem from="1560708818177" duration="6730000" />
+      <workItem from="1560708818177" duration="6984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6730000" />
+    <option name="totallyTimeSpent" value="6984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -321,10 +319,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/4_Fisica/Servidor/receiver.rb">
+    <entry file="file://$PROJECT_DIR$/1_Aplicacao/Servidor/Servidor.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_Aplicacao/Servidor/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="126">
+          <caret line="27" column="56" lean-forward="true" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -342,20 +343,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_Aplicacao/Servidor/Servidor.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2_Transporte/Receivers/receiverRede.go">
+    <entry file="file://$PROJECT_DIR$/4_Fisica/Servidor/receiver.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_Aplicacao/Servidor/Program.cs">
+    <entry file="file://$PROJECT_DIR$/2_Transporte/Receivers/receiverRede.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        <state relative-caret-position="612">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
         </state>
       </provider>
     </entry>

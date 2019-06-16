@@ -8,8 +8,8 @@ puts "[RECEPCAO: APLICACAO - FISICA]"
 ip_servidor = "localhost"
 porta_servidor = "3344"
 
-ip_origem = "172.16.255.137"
-ip_destino = "172.16.254.99"
+ip_origem = "192.168.0.15"
+ip_destino = "192.168.0.17"
 porta = 12345
 
 server =  TCPServer.open(ip_servidor, porta_servidor)
@@ -20,9 +20,8 @@ loop{
 	mensagem = client.recv(SIZE)
 	puts "Enviando mensagem: " + mensagem
 	puts "\n"
-	# cliente_fisica = Cliente.new()
-	# resposta = cliente_fisica.run(ip_origem, ip_destino, porta, mensagem)
-	resposta = "Resposta da Fisica"
+	cliente_fisica = Cliente.new()
+	resposta = cliente_fisica.run(ip_origem, ip_destino, porta, mensagem)
 	puts "Respondendo Aplicacao com Resposta: " + resposta
 	client.write(resposta)
 	puts "Fechando \n"
