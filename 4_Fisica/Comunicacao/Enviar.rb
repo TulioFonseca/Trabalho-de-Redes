@@ -17,5 +17,3 @@ class Cliente
   end
 end
 
-c = Cliente.new
-c.run("teste")

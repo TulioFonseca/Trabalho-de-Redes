@@ -1,7 +1,7 @@
 import socket
 
 def sendTransporte(message):
-    HOST = ''     # Endereco IP do Servidor
+    HOST = '127.0.0.1'     # Endereco IP do Servidor
     PORT = 3322            # Porta que o Servidor esta
     tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     dest = (HOST, PORT)
@@ -12,7 +12,7 @@ def sendTransporte(message):
     return response
 
 
-HOST = ''              # Endereco IP do Servidor
+HOST = '127.0.0.1'              # Endereco IP do Servidor
 PORT = 4433          # Porta que o Servidor esta
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -20,6 +20,7 @@ orig = (HOST, PORT)
 tcp.bind(orig)
 tcp.listen(1)
 while True:
+    print('Servidor Escutando')
     con, cliente = tcp.accept()
     print('Concetado por', cliente)
     # while True:
@@ -28,6 +29,7 @@ while True:
     print(cliente, message)
 
     response = sendTransporte(message)
+    print('Resposta ao Cliente', response)
     con.send(response)
         
     print('Finalizando conexao do cliente', cliente)

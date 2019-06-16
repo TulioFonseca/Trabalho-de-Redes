@@ -22,7 +22,7 @@ puts "Servidor escutando..."
 arq = 1
 
 loop{ 
-	client = server.accept    
+	client = server.accept
 	puts "Recebendo arquivo ... " + arq.to_s
 	mensagem = client.recv(SIZE)
 	#macPdu = mac.getMacPdu(mensagem.to_s)

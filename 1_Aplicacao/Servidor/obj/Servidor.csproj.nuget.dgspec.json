@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Servidor/Servidor.csproj": {}
+    "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Camadas\\Trabalho-de-Redes\\1_Aplicacao\\Servidor\\Servidor.csproj": {}
   },
   "projects": {
-    "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Servidor/Servidor.csproj": {
+    "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Camadas\\Trabalho-de-Redes\\1_Aplicacao\\Servidor\\Servidor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Servidor/Servidor.csproj",
+        "projectUniqueName": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Camadas\\Trabalho-de-Redes\\1_Aplicacao\\Servidor\\Servidor.csproj",
         "projectName": "Servidor",
-        "projectPath": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Servidor/Servidor.csproj",
-        "packagesPath": "/home/caio/.nuget/packages/",
-        "outputPath": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Servidor/obj/",
+        "projectPath": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Camadas\\Trabalho-de-Redes\\1_Aplicacao\\Servidor\\Servidor.csproj",
+        "packagesPath": "C:\\Users\\TulioFonseca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TulioFonseca\\Desktop\\Trabalho-de-Camadas\\Trabalho-de-Redes\\1_Aplicacao\\Servidor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/caio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\TulioFonseca\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

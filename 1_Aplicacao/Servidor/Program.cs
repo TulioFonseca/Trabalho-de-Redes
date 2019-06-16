@@ -23,12 +23,12 @@ namespace Servidor
                     byte[] bytesFrom = new byte[10025];
                     networkStream.Read(bytesFrom, 0, bytesFrom.Length);
                     string dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
-                    // String corpoMensagem = getCorpoMsg(dataFromClient);
-                    string resposta = "CERTO";
-                    // if (corpoMensagem.Contains("/get")){
-                    //     Console.WriteLine("Metodo /GET encontrado ... Mandando resposta... ");
-                    //     resposta = "Caio, Tulio, Felipao  \n";
-                    // }
+                    String corpoMensagem = getCorpoMsg(dataFromClient);
+                    string resposta = "";
+                    if (corpoMensagem.Contains("/get")){
+                         Console.WriteLine("Metodo /GET encontrado ... Mandando resposta... ");
+                         resposta = "Caio, Tulio  ";
+                    }
                     string serverResponse = resposta;
                     Byte[] sendBytes = Encoding.ASCII.GetBytes(serverResponse);
                     networkStream.Write(sendBytes, 0, sendBytes.Length);

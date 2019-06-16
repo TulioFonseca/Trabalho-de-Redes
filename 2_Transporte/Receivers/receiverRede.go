@@ -3,7 +3,7 @@ package main
 import "net"
 import "fmt"
 import "bufio"
-// import "strings" // only needed below for sample processing
+import "strings" // only needed below for sample processing
 
 func main() {
 
@@ -22,8 +22,16 @@ func main() {
         fmt.Print("Message Received:", string(message) + "\n")
 
         // response := strings.ToUpper(message)
-        response := sendAplicacao(message)
+        response := ""
 
+        array := strings.Split(message, ",")
+        fmt.Print("Array: "+ array[0] + array[1] + array[2] + array[3] + array[4])
+        if strings.Compare(array[4], "1") == 1 {
+            response = strings.ToUpper("ok    ")
+        }else {
+            response = sendAplicacao(message)
+        }
+        fmt.Print("RESPOSTA: "+ response + "\n" )
         // send new string back to client
         conn.Write([]byte(response))
     }
