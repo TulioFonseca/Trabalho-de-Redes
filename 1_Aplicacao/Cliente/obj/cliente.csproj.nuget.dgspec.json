@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj": {}
+    "/media/caio/Dados5/Cefet/9/Trabalho-de-Redes/1_Aplicacao/Cliente/cliente.csproj": {}
   },
   "projects": {
-    "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj": {
+    "/media/caio/Dados5/Cefet/9/Trabalho-de-Redes/1_Aplicacao/Cliente/cliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj",
+        "projectUniqueName": "/media/caio/Dados5/Cefet/9/Trabalho-de-Redes/1_Aplicacao/Cliente/cliente.csproj",
         "projectName": "cliente",
-        "projectPath": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/cliente.csproj",
+        "projectPath": "/media/caio/Dados5/Cefet/9/Trabalho-de-Redes/1_Aplicacao/Cliente/cliente.csproj",
         "packagesPath": "/home/caio/.nuget/packages/",
-        "outputPath": "/media/caio/Dados4/Cefet/9/Trabalho-de-Redes/Aplicacao/Cliente/obj/",
+        "outputPath": "/media/caio/Dados5/Cefet/9/Trabalho-de-Redes/1_Aplicacao/Cliente/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
