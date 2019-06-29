@@ -9,6 +9,9 @@ class Quadro
         myMac = mac.getMacAddres
         @mac_origem = myMac
         @mac_destino = getMacAddress(pdu_superior.ip_destino)
+        if (@mac_destino == nil)
+            @mac_destino = myMac
+        end
     end
 
     attr_writer :mac_origem

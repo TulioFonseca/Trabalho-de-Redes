@@ -13,6 +13,7 @@ class Cliente
         puts "Conectando com o servidor ... "
         server = TCPSocket.open(ip_destino, porta)
         puts "Enviando o arquivo ... "
+        puts quadro.toString()
         server.write(quadro.toString())
         resposta = ""
         while line = server.gets     # Read lines from the socket
@@ -29,7 +30,9 @@ class Cliente
         # arquivo = Arquivo.new
         # mensagem_binaria = arquivo.converterBinario(mensagem)
         pdu = PDU.new(ip_origem, ip_destino, mensagem)
+        puts("PDU: " + pdu.toString() + "\n")
         quadro = Quadro.new(pdu)
+        puts("Quadro: ", quadro.toString() + "\n")
 
         loop{
             puts "Tentando enviar arquivo"

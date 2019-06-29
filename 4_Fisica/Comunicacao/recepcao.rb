@@ -18,6 +18,8 @@ puts "Servidor escutando..."
 loop{ 
 	client = server.accept    
 	mensagem = client.recv(SIZE)
+	ip_destino = mensagem.split("#")[0]
+	mensagem = mensagem.split("#")[1]
 	puts "Enviando mensagem: " + mensagem
 	puts "\n"
 	cliente_fisica = Cliente.new()

@@ -12,8 +12,8 @@ def sendTransporte(message):
     return response
 
 
-HOST = '192.168.0.17'              # Endereco IP do Servidor
-PORT = 6665          # Porta que o Servidor esta
+HOST = '192.168.0.15'              # Endereco IP do Servidor
+PORT = 12345          # Porta que o Servidor esta
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 orig = (HOST, PORT)

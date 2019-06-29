@@ -11,6 +11,33 @@ def sendFisica(message):
     tcp.close()
     return response
 
+def calcular_and_mask(ip):
+    ips = ip.split(".")
+    masks = mask.split(".")
+    results = list()
+    for i in range(len(ips)):
+        results.append(str(int(ips[i]) & int(masks[i])))
+    return ".".join(results)
+
+def ip_gateway():
+    f = open("tabela.txt", "r")
+    ips = f.read().split("\n")
+    return ips[-1]
+
+def esta_na_tabela():
+    f = open("tabela.txt", "r")
+    ips = f.read().split("\n")
+    return ip_destino in ips
+
+def esta_mesma_rede():
+    rede_origem = calcular_and_mask(ip_origem)
+    rede_destino = calcular_and_mask(ip_destino)
+    # return rede_origem == rede_destino
+    return False
+
+ip_origem = "192.168.0.15"
+ip_destino = "192.168.0.17"
+mask = "255.255.255.0"
 
 HOST = ''              # Endereco IP do Servidor
 PORT = 2233          # Porta que o Servidor esta
@@ -22,12 +49,17 @@ tcp.listen(1)
 while True:
     con, cliente = tcp.accept()
     print('Concetado por', cliente)
-    # while True:
     message = con.recv(1024)
-        # if not message: break
     print(cliente, message)
 
-    response = sendFisica(message)
+    if esta_mesma_rede():
+        ip_destino = ip_destino
+    elif esta_na_tabela():
+        ip_destino = ip_destino
+    else:
+        ip_destino = ip_gateway()
+    print(ip_destino)
+    response = sendFisica(ip_destino.encode() + b"#" + message)
     con.send(response  + b"\n")
         
     print('Finalizando conexao do cliente', cliente)

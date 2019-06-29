@@ -23,7 +23,7 @@ namespace Teste
   
                 Console.WriteLine("Conectado");  
   
-                byte[] msg = Encoding.ASCII.GetBytes("/getNomesDoGrupo:1" + "\n");  
+                byte[] msg = Encoding.ASCII.GetBytes("/getNomesDoGrupo:0" + "\n");  
 
                 Console.WriteLine("Enviando mensagem");  
                 int bytesSent = sender.Send(msg);  
