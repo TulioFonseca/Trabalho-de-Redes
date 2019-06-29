@@ -1,8 +1,7 @@
 import socket
 
 def sendTransporte(message):
-    # Pegar a porta e o IP do arquivo
-    HOST = '192.168.0.15'     # Endereco IP do Roteador
+    HOST = '192.168.0.17'     # Endereco IP do Servidor
     PORT = 12345            # Porta que o Servidor esta
     tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     dest = (HOST, PORT)
@@ -13,8 +12,8 @@ def sendTransporte(message):
     return response
 
 
-HOST = '192.168.0.66'              # Endereco IP do Servidor
-PORT = 12345          # Porta que o Servidor esta
+HOST = '192.168.0.17'              # Endereco IP do Servidor
+PORT = 6665          # Porta que o Servidor esta
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 orig = (HOST, PORT)
@@ -26,13 +25,13 @@ while True:
     print('Concetado por', cliente)
     # while True:
     message = con.recv(1024) + b"\n"
-        # if not message: break
+    # if not message: break
     print(cliente, message)
 
     response = sendTransporte(message)
     print('Resposta ao Cliente', response)
     con.send(response)
-        
+
     print('Finalizando conexao do cliente', cliente)
     con.shutdown(1)
     con.close()
