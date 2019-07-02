@@ -22,7 +22,7 @@ func main() {
         is_tcp := strings.TrimRight(strings.Split(message, ":")[1], "\n")
         if is_tcp == "1"{
             fmt.Print("Conexao TCP \n")
-            balanga_tres_vezes()
+            three_hand_shake()
         }else{
             fmt.Print("Conexao UDP \n")
         }
@@ -36,7 +36,7 @@ func main() {
     }
 }
 
-func balanga_tres_vezes() {
+func three_hand_shake() {
     for i := 0; i < 2; i++ {
         fmt.Print("Message TCP: \n")
         sendRede("1")

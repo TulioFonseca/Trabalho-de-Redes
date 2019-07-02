@@ -32,8 +32,8 @@ def esta_na_tabela():
 def esta_mesma_rede():
     rede_origem = calcular_and_mask(ip_origem)
     rede_destino = calcular_and_mask(ip_destino)
-    # return rede_origem == rede_destino
-    return False
+    return rede_origem == rede_destino
+    # return False
 
 ip_origem = "192.168.0.15"
 ip_destino = "192.168.0.17"
